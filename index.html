@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Atividade Aula - 06</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <section class="container">
+      <h3>Cadastro</h3>
+
+      <p>Digite o nome:</p>
+      <input type="text" name="" id="input-nome" />
+      <br />
+      <p>Digite o e-mail:</p>
+      <input type="email" name="" id="input-email" />
+      <br />
+      <p>Digite sua senha:</p>
+      <input type="password" name="" id="input-senha" />
+
+      <br />
+      <h4 id="mensagem"></h4>
+
+      <input
+        type="button"
+        class="btn btn-success"
+        onclick="tratar()"
+        value="Cadastrar"
+      />
+    </section>
+
+    <script>
+      function tratar() {
+        const mensagem = document.getElementById('mensagem')
+
+        const nome = document.getElementById('input-nome').value
+
+        let email = document.getElementById('input-email').value
+        let senha = document.getElementById('input-senha').value
+
+        try {
+          if (nome == '' || email == '') throw 'Digite algo'
+          else if (nome == !isNaN(name) || email == !isNaN(email))
+            throw 'Somente caracteres'
+          else if (senha.length < 8) throw 'Senha menor que 8 caracteres'
+          else if (isNaN(senha)) throw 'A senha precisa ser um número'
+        } catch (err) {
+          mensagem.innerText += err
+        }
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
